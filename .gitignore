@@ -1,0 +1,31 @@
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+.env.local
+*.venv
+Pipfile
+Pipfile.lock
+
+# Ignore Streamlit cache and config
+.streamlit/
+*.toml  # If you want to keep `config.toml`, remove this line
+config.toml
+secrets.toml
+
+# Ignore logs and system files
+logs/
+*.log
+*.sqlite3
+.DS_Store  # macOS system file
+Thumbs.db  # Windows system file
+
+# Ignore Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Ignore Git-related files
+.git/
