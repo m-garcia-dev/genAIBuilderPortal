@@ -63,6 +63,11 @@ st.markdown(
         [data-testid="stBaseButton-header"] {
             display: none !important;
         }
+
+        [data-testid="stSidebarCollapsedControl"] {
+            display: none !important;
+        }
+
     </style>
  """,
     unsafe_allow_html=True)
