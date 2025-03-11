@@ -1,0 +1,11 @@
+[server]
+enableCORS = false
+enableXsrfProtection = false
+
+[theme]
+base = "dark"  # Options: "light" or "dark"
+primaryColor = "#0693e3"  # Custom primary color (buttons, highlights)
+backgroundColor = "#0E1831"  # Background color
+secondaryBackgroundColor = "#0E1831"  # Sidebar & widgets background
+textColor = "#FFFFFF"  # Default text color
+font = "sans serif"  # Options: "sans serif", "serif", or "monospace"

@@ -12,9 +12,6 @@ Pipfile
 Pipfile.lock
 
 # Ignore Streamlit cache and config
-.streamlit/
-*.toml  # If you want to keep `config.toml`, remove this line
-config.toml
 secrets.toml
 
 # Ignore logs and system files
