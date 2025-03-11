@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import time
 from dotenv import dotenv_values
+from pathlib import Path
 
 
 # Load environment
@@ -31,6 +32,13 @@ st.set_page_config(
     layout="wide"  # Expands content width
 )
 
+def load_global_css():
+    css_path = Path(__file__).parent.parent / "styles" / "style.css"
+    if css_path.exists():
+        st.markdown(f"<style>{css_path.read_text()}</style>", unsafe_allow_html=True)
+
+load_global_css()
+
 st.title(title)
 
 st.markdown(
@@ -41,37 +49,8 @@ st.markdown(
     - Do I get a bonus ?
     - What is the expense policy ?
 
-    <style>
-        /* Apply Poppins for headings */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif !important;
-            color: #039 !important;
-        }
-
-        h1 {
-        font-weight:400 !important;
-        font-size:80px !important;
-        }
-
-        /* Apply Roboto for body text */
-        html, body, [class*="st-"] {
-            font-family: 'Roboto', sans-serif !important;
-            color: #039 !important;
-        }
-
-        /* Hide the "Deploy" button in the header */
-        [data-testid="stBaseButton-header"] {
-            display: none !important;
-        }
-
-        [data-testid="stSidebarCollapsedControl"] {
-            display: none !important;
-        }
-
-    </style>
  """,
     unsafe_allow_html=True)
-
 
 
 # Initialize chat history

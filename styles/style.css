@@ -1,0 +1,87 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography
+# Global Elements
+# Color Scheme
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif !important;
+    color: #ffffff !important;
+}
+
+h1 {
+    font-weight: 600 !important;
+    font-size: 36px !important;
+}
+
+html,
+body,
+[class*="st-"] {
+    font-family: 'Roboto', sans-serif !important;
+    color: #ffffff !important;
+    font-size: 18px;
+}
+
+/*--------------------------------------------------------------
+# Global Elements
+--------------------------------------------------------------*/
+.stMainBlockContainer {
+    padding-top: 25px !important;
+}
+
+[data-testid="stBaseButton-header"] {
+    display: none !important;
+}
+
+section[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+[data-testid="stSidebarCollapsedControl"] {
+    display: none !important;
+}
+
+/*--------------------------------------------------------------
+# Color Scheme
+--------------------------------------------------------------*/
+/* Expander Widget */
+div[data-testid="stExpander"] {
+    background-color: #1A1F36 !important;
+}
+
+/* Dataframe Toolbar */
+div[data-testid="stDecoration"] {
+    background-color: #1A1F36 !important;
+}
+
+/* Select Boxes & Dropdowns */
+div[data-baseweb="select"] {
+    background-color: #1A1F36 !important;
+}
+
+/* Text Inputs & Text Areas */
+input,
+textarea {
+    background-color: #1A1F36 !important;
+}
+
+/* File Uploader */
+section[data-testid="stFileUploaderDropzone"] {
+    background-color: #1A1F36 !important;
+}
+
+/* Metric Box */
+div[data-testid="stMetric"] {
+    background-color: #1A1F36 !important;
+}

@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 import time
+from pathlib import Path
+import streamlit.components.v1 as components
 
 
 def typewriter(text: str, speed: int):
@@ -11,21 +13,42 @@ def typewriter(text: str, speed: int):
         container.markdown(curr_full_text)
         time.sleep(1 / speed)
 
+page_title = "PDF Parsing Comparison"
+st.set_page_config(
+    page_title=page_title,
+    initial_sidebar_state="collapsed",  # Sidebar starts collapsed
+    layout="wide"  # Expands content width
+)
 
-st.set_page_config(page_title="GenAI Builder - Chatbot")
-st.title("PDF Parsing Comparison")
+def load_global_css():
+    css_path = Path(__file__).parent.parent / "styles" / "style.css"
+    if css_path.exists():
+        st.markdown(f"<style>{css_path.read_text()}</style>", unsafe_allow_html=True)
+
+load_global_css()
+
+st.title("Live Demo")
 st.markdown(
     """
 
-    ### This use-case is about parsing and summarising PDFs.
     This bot will process PDFs using 3 different techniques:
     
     *Methods 1 and 2 are suitable for small PDFs, but become inefficient with larger documents.*
     1. Parsing the entire PDF to text, and providing that to the LLM
     2. Parsing the entire PDF to images, and providing that to the LLM **(WIP)**
     3. Vectorising the PDF in a vector DB, and querying that via the LLM **(WIP)**
-    """
+
+    """,
+    unsafe_allow_html=True
 )
+
+components.html(
+    """
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js"></script>
+    """,
+    height=0
+)
+
 # Initialize chat history
 if "PDF_Parsing_messages" not in st.session_state:
     st.session_state.PDF_Parsing_messages = []
